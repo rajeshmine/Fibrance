@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Collections from "./pages/Collections";
 import ProductDetails from "./pages/ProductDetails";
@@ -13,12 +14,7 @@ const App = () => {
       <header className="header">
         <div className="container header-container">
           <h1 className="logo">Neidhal</h1>
-          <nav className="nav">
-            <NavLink to="/" className={({ isActive }) => isActive ? "navlink active" : "navlink"} end>Home</NavLink>
-            <NavLink to="/collections" className={({ isActive }) => isActive ? "navlink active" : "navlink"}>Collections</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "navlink active" : "navlink"}>About Us</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "navlink active" : "navlink"}>Contact</NavLink>
-          </nav>
+          <NavBar />
         </div>
       </header>
 
