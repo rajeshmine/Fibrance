@@ -1,76 +1,36 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { FaSearch, FaUser, FaShoppingCart, FaBars } from 'react-icons/fa';
+import './Navbar.css';
 
-const menuData = [
-  { name: "Home", path: "/" },
-  {
-    name: "Collections",
-    path: "/collections",
-    submenu: [
-      { name: "Sarees", path: "/collections/sarees" },
-      { name: "Salwar Material", path: "/collections/salwar-material" },
-      { name: "Dupattas", path: "/collections/dupattas" },
-    ],
-  },
-  { name: "About Us", path: "/about" },
-  { name: "Contact", path: "/contact" },
-];
-
-const NavBar = () => {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const handleMouseEnter = (index) => {
-    setOpenDropdown(index);
-  };
-
-  const handleMouseLeave = () => {
-    setOpenDropdown(null);
-  };
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="nav">
-      <ul className="nav-menu">
-        {menuData.map((item, index) => (
-          <li
-            key={item.name}
-            className="nav-item"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <NavLink
-              to={item.path}
-              className={({ isActive }) =>
-                isActive ? "navlink active" : "navlink"
-              }
-              end={!item.submenu}
-            >
-              {item.name}
-            </NavLink>
-            {item.submenu && (
-              <ul
-                className={`dropdown-menu ${
-                  openDropdown === index ? "show" : ""
-                }`}
-              >
-                {item.submenu.map((subItem) => (
-                  <li key={subItem.name} className="dropdown-item">
-                    <NavLink
-                      to={subItem.path}
-                      className={({ isActive }) =>
-                        isActive ? "navlink active" : "navlink"
-                      }
-                    >
-                      {subItem.name}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+    <nav className="navbar">
+      <div className="navbar-logo">ShopEase</div>
+
+      <div className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <FaBars />
+      </div>
+
+      <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Salwar Materials</a></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Sarees</a></li>
       </ul>
+
+      <div className="navbar-icons">
+        <FaSearch />
+        <FaUser />
+        <div className="cart-icon">
+          <FaShoppingCart />
+          <span className="cart-badge">2</span>
+        </div>
+      </div>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;
