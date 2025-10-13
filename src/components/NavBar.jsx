@@ -14,11 +14,11 @@ const Navbar = () => {
       </div>
 
       <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Salwar Materials</a></li>
-        <li><a href="#">New Arrivals</a></li>
-        <li><a href="#">Best Sellers</a></li>
-        <li><a href="#">Sarees</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products/salwar">Salwar Materials</a></li>
+        <li><a href="/products/new-arrivals">New Arrivals</a></li>
+        <li><a href="/products/best-sellrs">Best Sellers</a></li>
+        <li><a href="/products/saree">Sarees</a></li>
       </ul>
 
       <div className="navbar-icons">

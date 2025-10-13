@@ -1,23 +1,25 @@
 import React from 'react';
-import Navbar from './components/NavBar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import CategorySection from './components/CategorySection';
 import MultiCarousel from './components/MultiCarousel';
 import HeroBannerCarousel from './components/HeroBannerCarousel';
 import Footer from './components/Footer';
+import Home from './pags/Home';
+import ProductDetailsPage from './pags/ProductDetailsPage';
+import ProductListPage from './pags/ProductListPage';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <CategorySection />
-      <section>
-        <HeroBannerCarousel />
-      </section>
-      <MultiCarousel />
-      <section>
-        <Footer />
-      </section>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+         <Route path="/products/:category" element={<ProductListPage />} />
+        <Route path="/products/details/:id" element={<ProductDetailsPage />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
