@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaSearch, FaUser, FaShoppingCart, FaBars } from 'react-icons/fa';
 import './Navbar.css';
 
-const Navbar = () => {
+export default function Navbar()  {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -32,5 +32,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
