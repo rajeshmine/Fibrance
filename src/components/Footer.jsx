@@ -1,60 +1,53 @@
-import React from "react";
-import "./Footer.css";
-
-export default function Footer() {
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Footer.css'
+function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        {/* Brand / About */}
-        <div className="footer-col">
-          <h3 className="footer-logo">SareeElegance</h3>
-          <p className="footer-about">
-            Discover timeless sarees crafted with love and tradition. 
-            From festive silks to everyday cottons, we bring elegance to your wardrobe.
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3>About Fibrance</h3>
+          <p style={{ color: 'var(--color-text-secondary)' }}>
+            Your destination for quality fashion and accessories. We bring you the latest trends at affordable prices.
           </p>
         </div>
-
-        {/* Quick Links */}
-        <div className="footer-col">
-          <h4>Quick Links</h4>
+        <div className="footer-section">
+          <h3>Quick Links</h3>
           <ul>
-            <li><a href="/collections">Collections</a></li>
-            <li><a href="/new">New Arrivals</a></li>
-            <li><a href="/sale">Sale</a></li>
-            <li><a href="/about">About Us</a></li>
+            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/wishlist">Wishlist</Link></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
-        {/* Customer Care */}
-        <div className="footer-col">
-          <h4>Customer Care</h4>
+        <div className="footer-section">
+          <h3>Customer Service</h3>
           <ul>
-            <li><a href="/shipping">Shipping Info</a></li>
-            <li><a href="/returns">Returns & Exchanges</a></li>
-            <li><a href="/faq">FAQs</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="#shipping">Shipping Info</a></li>
+            <li><a href="#returns">Returns</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
           </ul>
         </div>
-
-        {/* Newsletter & Social */}
-        <div className="footer-col">
-          <h4>Stay Connected</h4>
-          <form className="newsletter">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">Subscribe</button>
-          </form>
-          <div className="social-links">
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-youtube"></i></a>
-          </div>
+        <div className="footer-section">
+          <h3>Newsletter</h3>
+          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
+            Subscribe to get special offers and updates
+          </p>
+          <input 
+            type="email" 
+            className="search-input" 
+            placeholder="Your email" 
+            style={{ marginBottom: '12px', width: '100%' }} 
+          />
+          <button className="btn btn-primary" style={{ width: '100%' }}>Subscribe</button>
         </div>
       </div>
-
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SareeElegance. All rights reserved.</p>
+        &copy; 2025 Flone E-Commerce. All rights reserved.
       </div>
     </footer>
-  );
+  )
 }
+
+export default Footer
