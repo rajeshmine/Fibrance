@@ -1,5 +1,5 @@
 :root {
-  --modern-pink: #a21dcb;
+  --modern-pink: #E70089;
   --soft-bg: #fef4ee;
   --sidebar-bg: #f3e8fb;
 }
@@ -36,7 +36,7 @@
   line-height: 1;
 }
 
-.icon-close { color: #a21dcb; }
+.icon-close { color: #E70089; }
 
 .mobile-logo {
   color: var(--modern-pink);
@@ -119,7 +119,7 @@
 .arrow {
   margin-left: auto;
   font-size: 1.2em;
-  color: #a21dcb;
+  color: #E70089;
 }
 
 .mobile-menu-link:hover {
@@ -149,7 +149,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #a21dcb;
+  color: #E70089;
   font-size: 13px; 
   font-weight: 600;
   letter-spacing: 0.03em;

@@ -1,25 +1,22 @@
 import React, { useState } from "react";
 import "./MobileHeader.css";
+import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter'
 
 // You can pass these from props if desired for navigation
 const menuLinks = [
-  { label: "New Arrival", href: "#" },
-  { label: "Salwar materials", href: "#" },
-  { label: "Sarees", href: "#" },
-  { label: "Bestseller", href: "#" },
-  { label: "Rare & Unique", href: "#" },
-  { label: "Shop By Video", href: "#" },
-  { label: "Price Drop", href: "#" },
-  { label: "Sold Out", href: "#" }
+  { label: "New Arrival", type: "newArrival" },
+  { label: "Salwar materials", type: "salwarMaterial" },
+  { label: "Ready to wear", type: "readyToWear" },
+  { label: "Bestseller", type: "bestSeller" },
+  { label: "Rare & Unique", type: "unique" },
 ];
 const tabBarLinks = [
-  { label: "HOME", icon: "⌂", href: "#", active: true },
-  { label: "SALWAR", icon: "👗", href: "#" },
-  { label: "SAREES", icon: "🥻", href: "#" },
-  { label: "CONTACT", icon: "☎", href: "#" }
+  { label: "SALWAR MATERIALS", icon: "👗", type: "salwarMaterial" },
+  { label: "READY TO WEAR", icon: "🥻", type: "readyToWear" },
 ];
 
 function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
+  const applyFilter = useApplyHomeFilter()
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Trap focus in sidebar when open for accessibility
@@ -58,7 +55,7 @@ function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
         <button className="header-icon" aria-label="Search">
           <span role="img" aria-label="Search">🔍</span>
         </button>
-        <div className="mobile-logo">FIBRANCE<sup>®</sup></div>
+        <div className="mobile-logo">THARAGAI<sup>®</sup></div>
         <button className="header-icon" aria-label="Wishlist">
           <span role="img" aria-label="Wishlist">♡</span>
           {wishlistCount > 0 && <span className="cart-badge">{wishlistCount}</span>}
@@ -82,22 +79,20 @@ function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
       >
         <nav className="mobile-menu-list" aria-label="Main menu">
           {menuLinks.map(link => (
-            <a key={link.label} href={link.href} className="mobile-menu-link">
-              {link.label}
-              {link.hasArrow && <span className="arrow">&#8594;</span>}
-            </a>
+            <span key={link.label} onClick={() => { applyFilter(link.type); setMenuOpen(false); }}>{link.label}</span>
           ))}
         </nav>
         <div className="mobile-tab-bar">
           {tabBarLinks.map(tab => (
-            <a
+
+            <div
               key={tab.label}
-              href={tab.href}
+              onClick={() => { applyFilter(tab.type); setMenuOpen(false); }}
               className={`tab-link${tab.active ? " active" : ""}`}
             >
               <span className="tab-icon">{tab.icon}</span>
               <span>{tab.label}</span>
-            </a>
+            </div>
           ))}
         </div>
       </aside>

@@ -1,46 +1,81 @@
 // src/slices/filterSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  availability: null, // 'inStock' or 'outOfStock'
-  occasions: [],      // Array of strings, e.g. ["Daily Wear", "Party"]
-  fabrics: [],        // Array of strings, e.g. ["Cotton", "Silk"]
-  colors: [],         // Array of strings, e.g. ["Pink", "Blue"]
-  priceRange: { from: 0, to: 5200 }, // price range filter
-};
+  searchQuery: '',
+  category: 'all',
+  availability: null, // 'inStock' | 'outOfStock' | null
+  fabrics: [],
+  colors: [],
+  priceRange: { from: 0, to: Infinity },
+  budget: null,
+  premium: null,
+  exclusive: null,
+  handpicked: null,
+  bestSeller: null,
+  unique: null,
+  newArrival: null,
+  sortOrder: 'default' // values like 'default', 'price-low', 'price-high', 'name-az', etc.
+}
 
 const filterSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setAvailability(state, action) {
-      state.availability = action.payload; // 'inStock' or 'outOfStock' or null
+    setSearchQuery(state, action) {
+      state.searchQuery = action.payload
     },
-    setOccasions(state, action) {
-      state.occasions = action.payload; // array of selected occasions
+    setCategory(state, action) {
+      state.category = action.payload
+    },
+    setAvailability(state, action) {
+      state.availability = action.payload
     },
     setFabrics(state, action) {
-      state.fabrics = action.payload; // array of selected fabrics
+      state.fabrics = action.payload
     },
     setColors(state, action) {
-      state.colors = action.payload; // array of selected colors
+      state.colors = action.payload
     },
     setPriceRange(state, action) {
-      state.priceRange = action.payload; // { from: number, to: number }
+      state.priceRange = action.payload
     },
-    resetFilters(state) {
-      Object.assign(state, initialState);
+    toggleBooleanFilter(state, action) {
+      const key = action.payload
+      state[key] = state[key] === true ? null : true
     },
-  },
-});
+    setSortOrder(state, action) {
+      state.sortOrder = action.payload
+    },
+    clearAllFilters(state) {
+      state.searchQuery = ''
+      state.category = 'all'
+      state.availability = null
+      state.fabrics = []
+      state.colors = []
+      state.priceRange = { from: 0, to: Infinity }
+      state.budget = null
+      state.premium = null
+      state.exclusive = null
+      state.handpicked = null
+      state.bestSeller = null
+      state.unique = null
+      state.newArrival = null
+      state.sortOrder = 'default'
+    }
+  }
+})
 
 export const {
+  setSearchQuery,
+  setCategory,
   setAvailability,
-  setOccasions,
   setFabrics,
   setColors,
   setPriceRange,
-  resetFilters,
-} = filterSlice.actions;
+  toggleBooleanFilter,
+  setSortOrder,
+  clearAllFilters
+} = filterSlice.actions
 
-export default filterSlice.reducer;
+export default filterSlice.reducer

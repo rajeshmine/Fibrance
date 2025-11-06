@@ -6,9 +6,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>About Fibrance</h3>
+          <h3>About Tharagai Boutique</h3>
           <p style={{ color: 'var(--color-text-secondary)' }}>
-            Your destination for quality fashion and accessories. We bring you the latest trends at affordable prices.
+           Tharagai Boutique in Hosur offers premium quality sarees, salwar materials, and handcrafted fabrics sourced from across India. Known for exquisite designs and superior craftsmanship, it provides an exclusive collection that blends tradition with modern style. Visit us at Amman Nagar, Dinnur, Hosur for authentic, handpicked attire and personalized service.
+
+
           </p>
         </div>
         <div className="footer-section">
@@ -34,17 +36,17 @@ function Footer() {
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
             Subscribe to get special offers and updates
           </p>
-          <input 
-            type="email" 
-            className="search-input" 
-            placeholder="Your email" 
-            style={{ marginBottom: '12px', width: '100%' }} 
+          <input
+            type="email"
+            className="search-input"
+            placeholder="Your email"
+            style={{ marginBottom: '12px', width: '100%' }}
           />
           <button className="btn btn-primary" style={{ width: '100%' }}>Subscribe</button>
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; 2025 Flone E-Commerce. All rights reserved.
+          &copy; 2026 Tharagai Boutique. All rights reserved.
       </div>
     </footer>
   )

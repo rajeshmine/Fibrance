@@ -4,6 +4,9 @@ export const selectProductsByCategory = (category) =>
   createSelector(
     (state) => state.products,
     (products) => products
-      .filter((product) => product.category === category)
-      .slice(0, 5) // get first 5 results only
+      .filter((product) => product[category])
+      .slice(0, 10) // get first 5 results only
   );
+
+
+  

@@ -1,12 +1,12 @@
 // src/slices/productsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-import {productsData} from '../../data/products';
+import { updated_products } from '../../data/updated_products';
 
 
 
 const productsSlice = createSlice({
   name: 'products',
-  initialState: productsData,
+  initialState: updated_products,
   reducers: {
     // Add product related reducers if needed
   },

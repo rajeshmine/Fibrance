@@ -58,67 +58,67 @@ function App() {
     setWishlist([])
     showNotification('Logged out successfully')
   }
+const addToCart = (productId) => {
+  const product = productsData.find(p => p.productId === productId);
+  const existingItem = cart.find(item => item.productId === productId);
 
-  const addToCart = (productId) => {
-    const product = productsData.find(p => p.id === productId)
-    const existingItem = cart.find(item => item.id === productId)
+  if (existingItem) {
+    setCart(cart.map(item =>
+      item.productId === productId
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    ));
+  } else {
+    setCart([...cart, { ...product, quantity: 1 }]);
+  }
+  showNotification(`${product.name} added to cart!`);
+}
 
-    if (existingItem) {
-      setCart(cart.map(item => 
-        item.id === productId 
-          ? { ...item, quantity: item.quantity + 1 }
+const removeFromCart = (productId) => {
+  setCart(cart.filter(item => item.productId !== productId));
+  showNotification('Item removed from cart');
+}
+
+const updateQuantity = (productId, change) => {
+  const item = cart.find(item => item.productId === productId);
+  if (item) {
+    const newQuantity = item.quantity + change;
+    if (newQuantity <= 0) {
+      removeFromCart(productId);
+    } else {
+      setCart(cart.map(item =>
+        item.productId === productId
+          ? { ...item, quantity: newQuantity }
           : item
-      ))
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }])
-    }
-    showNotification(`${product.name} added to cart!`)
-  }
-
-  const removeFromCart = (productId) => {
-    setCart(cart.filter(item => item.id !== productId))
-    showNotification('Item removed from cart')
-  }
-
-  const updateQuantity = (productId, change) => {
-    const item = cart.find(item => item.id === productId)
-    if (item) {
-      const newQuantity = item.quantity + change
-      if (newQuantity <= 0) {
-        removeFromCart(productId)
-      } else {
-        setCart(cart.map(item =>
-          item.id === productId
-            ? { ...item, quantity: newQuantity }
-            : item
-        ))
-      }
+      ));
     }
   }
+}
 
-  const clearCart = () => {
-    if (window.confirm('Are you sure you want to clear the cart?')) {
-      setCart([])
-      showNotification('Cart cleared!')
-    }
+const clearCart = () => {
+  if (window.confirm('Are you sure you want to clear the cart?')) {
+    setCart([]);
+    showNotification('Cart cleared!');
   }
+}
 
-  const toggleWishlist = (productId) => {
-    const product = productsData.find(p => p.id === productId)
-    const index = wishlist.findIndex(item => item.id === productId)
+const toggleWishlist = (productId) => {
+  const product = productsData.find(p => p.productId === productId);
+  const index = wishlist.findIndex(item => item.productId === productId);
 
-    if (index > -1) {
-      setWishlist(wishlist.filter(item => item.id !== productId))
-      showNotification(`${product.name} removed from wishlist`)
-    } else {
-      setWishlist([...wishlist, product])
-      showNotification(`${product.name} added to wishlist!`)
-    }
+  if (index > -1) {
+    setWishlist(wishlist.filter(item => item.productId !== productId));
+    showNotification(`${product.name} removed from wishlist`);
+  } else {
+    setWishlist([...wishlist, product]);
+    showNotification(`${product.name} added to wishlist!`);
   }
+}
 
-  const isInWishlist = (productId) => {
-    return wishlist.some(item => item.id === productId)
-  }
+const isInWishlist = (productId) => {
+  return wishlist.some(item => item.productId === productId);
+}
+
 
   return (
     <>
@@ -136,7 +136,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register onRegister={handleRegister} />} />
         <Route 
-          path="/shop" 
+          path="/products" 
           element={
             <Shop 
               onAddToCart={addToCart}

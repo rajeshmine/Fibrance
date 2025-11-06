@@ -1,9 +1,9 @@
 .carousel-container {
-    margin: 20px 0;
+    margin: 20px;
 }
 
 .carousel-header {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 10px;
     color: #333;
     /* default header color, override via props if needed */
@@ -12,14 +12,14 @@
 .carousel-scroll {
     display: flex;
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 }
 
 .carousel-item {
     flex: 0 0 auto;
     margin-right: 15px;
-    width: 260px;
+    width: 350px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
@@ -28,15 +28,15 @@
 
 .carousel-image {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 8px;
 }
 
 .carousel-title {
-    padding: 0 10px;
-    font-size: 15px;
+    padding: 0 20px;
+    font-size: 18px;
     margin: 0 0 6px 0;
     white-space: nowrap;
     overflow: hidden;
@@ -47,7 +47,7 @@
 
 
 .price-addcart-container {
-    padding: 0 10px 10px 10px;
+    padding: 0 20px 20px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,8 +57,8 @@
 .carousel-price {
     margin: 0;
     font-weight: bold;
-    font-size: 15px;
-    color: #a21dcb;
+    font-size: 20px;
+    color: #E70089;
     white-space: nowrap;
 }
 
@@ -66,17 +66,17 @@
     flex-shrink: 0;
     padding: 8px 14px;
     background-color: #f3e8fb;
-    color: #7d15a0;
+    color: #E70089;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
 .carousel-add-to-cart-btn:hover {
-    background-color: #7d15a0;
+    background-color: #E70089;
     color: #fff;
 }
 
@@ -89,19 +89,38 @@
 }
 
 .carousel-view-all {
-    font-size: 14px;
+    font-size: 16px;
     color: #007bff;
     text-decoration: none;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s;
-     background-color: #7d15a0;
+    background-color: #E70089;
     color: #fff;
-    padding: 4px 15px;
-    border-radius: 2px;
+    padding: 4px 25px;
+    border-radius: 4px;
 }
 
 .carousel-view-all:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .carousel-header {
+        font-size: 1.2rem;
+    }
+
+    .carousel-item {
+        width: 250px;
+    }
+
+    .carousel-image {
+        height: 250px;
+
+    }
+
+    .carousel-container {
+        margin: 10px 4px;
+    }
 }

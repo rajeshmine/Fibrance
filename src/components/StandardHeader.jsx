@@ -1,59 +1,13 @@
 import React, { useState } from "react";
 import "./StandardHeader.css";
-import SalwarDropdown from "./SalwarDropdown";
-const salwarDropdown = [
-    {
-        title: "By Fabric",
-        links: [
-            { label: "Cotton", url: "https://neidhal.com/collections/cotton-salwar-materials" },
-            { label: "Silk Cotton", url: "https://neidhal.com/collections/cotton-silk-dress-material" },
-            { label: "Silk", url: "https://neidhal.com/collections/silk-dress-material" },
-            { label: "Organza", url: "https://neidhal.com/collections/organza-dress-material" },
-            { label: "Linen", url: "https://neidhal.com/collections/linen-dress-material" },
-            { label: "Georgette", url: "https://neidhal.com/collections/georgette-dress-material" },
-            { label: "Kota", url: "https://neidhal.com/collections/kota-dress-material" },
-            { label: "Others", url: "https://neidhal.com/collections/dress-fabric-material" }
-        ]
-    },
-    {
-        title: "By Occasion",
-        links: [
-            { label: "Daily Wear", url: "https://neidhal.com/collections/daily-wear-dress-materials" },
-            { label: "Office Wear", url: "https://neidhal.com/collections/office-wear-salwar" },
-            { label: "Festive wear", url: "https://neidhal.com/collections/festival-salwar-suit" },
-            { label: "Party Wear", url: "https://neidhal.com/collections/party-wear-dress-material-for-ladies" }
-        ]
-    },
-    {
-        title: "By Color",
-        links: [
-            { label: "Red", url: "https://neidhal.com/collections/red-colour-dress-material" },
-            { label: "Blue", url: "https://neidhal.com/collections/blue-colour-dress-material" },
-            { label: "Green", url: "https://neidhal.com/collections/green-colour-dress-material" },
-            { label: "Black", url: "https://neidhal.com/collections/black-colour-dress-material" },
-            { label: "White", url: "https://neidhal.com/collections/white-colour-dress-material" },
-            { label: "Purple", url: "https://neidhal.com/collections/purple-color-dress-material" },
-            { label: "Orange", url: "https://neidhal.com/collections/orange-colour-dress-material" },
-            { label: "Brown", url: "https://neidhal.com/collections/brown-colour-dress-material" },
-            { label: "Beige", url: "https://neidhal.com/collections/beige-color-dress-material" },
-            { label: "Maroon", url: "https://neidhal.com/collections/maroon-colour-dress-materials" },
-            { label: "Pink", url: "https://neidhal.com/collections/pink-colour-dress-material" },
-            { label: "Peach", url: "https://neidhal.com/collections/peach-color-dress-material" },
-            { label: "Yellow", url: "https://neidhal.com/collections/yellow-colour-dress-material" },
-            { label: "Grey", url: "https://neidhal.com/collections/grey-colour-dress-material" }
-        ]
-    },
-    {
-        title: "By Price",
-        links: [
-            { label: "Less than 1000", url: "https://neidhal.com/collections/dress-materials-below-1000" },
-            { label: "1000-2000", url: "https://neidhal.com/collections/dress-material-above-1000-to-2000" },
-            { label: "2000 and above", url: "https://neidhal.com/collections/dress-materials-above-2000" }
-        ]
-    }
-];
+import boutiqueLogo from '../data/images/logo.png';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter'
+
 function StandardHeader({ cartCount = 1 }) {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const applyFilter = useApplyHomeFilter()
+
 
     return (
         <header className="standard-header">
@@ -77,7 +31,8 @@ function StandardHeader({ cartCount = 1 }) {
                     </a>
                 </div>
                 <div className="header-center-logo">
-                    <a href="/">FIBRANCE<sup>®</sup></a>
+                    <img src={boutiqueLogo} height="50" />
+                    {/* <a href="/">THARAGAI BOUTIQUE<sup>®</sup></a> */}
                 </div>
                 <div className="header-actions-row">
                     <button className="header-icon" aria-label="Search">
@@ -96,34 +51,11 @@ function StandardHeader({ cartCount = 1 }) {
                 </div>
             </div>
             <nav className="header-categories-row">
-                <a href="/shop">New Arrival</a>
-                <a href="/shop">Salwar materials</a>
-                {/* <div
-                    className="dropdown-parent"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
-                >
-                    <a
-                        href="https://neidhal.com/collections/salwar-materials"
-                        className="dropdown-link"
-                        aria-haspopup="true"
-                        aria-expanded={dropdownOpen}
-                    >
-                        Salwar materials <span className="arrow">&#709;</span>
-                    </a>
-                    {dropdownOpen && (
-                        <div className="dropdown-content">
-                            <SalwarDropdown />
-                        </div>
-                    )}
-                </div> */}
-
-                <a href="/shop">Sarees</a>
-                <a href="/shop">Bestseller</a>
-                <a href="/shop">Rare & Unique</a>
-                <a href="/shop">Shop By Video</a>
-                <a href="/shop">Price Drop</a>
-                <a href="/shop">Sold Out</a>
+                <span onClick={() => applyFilter('newArrival')}>New Arrivals</span>
+                <span onClick={() => applyFilter('salwarMaterial')}>Salwar materials</span>
+                <span onClick={() => applyFilter('readyToWear')}>Ready to wear</span>
+                <span onClick={() => applyFilter('bestSeller')}>Best Seller</span>
+                <span onClick={() => applyFilter('unique')}>Rare & Unique</span>
             </nav>
         </header>
     );
