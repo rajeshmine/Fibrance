@@ -1,5 +1,5 @@
 export const updated_products = [
-//   Ready to Wear - premium/exclusive (4)
+  //   Ready to Wear - premium/exclusive (4)
   {
     "id": "r2w_001",
     "title": "Designer Evening Gown",
@@ -25,7 +25,8 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6393"]
+    "images": ["IMG_6393"],
+    "description": 'Designer Evening Gown crafted in Silk. A premium quality product. Exclusive design for unique style. New arrival in collection.'
   },
   {
     "id": "r2w_002",
@@ -52,7 +53,9 @@ export const updated_products = [
       "weight": "700g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6362"]
+    "images": ["IMG_6362"],
+    "description": 'Embroidered Silk Saree crafted in Silk. A premium quality product. Exclusive design for unique style.'
+
 
   },
   {
@@ -80,7 +83,9 @@ export const updated_products = [
       "weight": "800g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6351"]
+    "images": ["IMG_6351"],
+    "description": 'Luxury Anarkali Suit crafted in Silk Blend. A premium quality product. Handpicked with special care. New arrival in collection.'
+
 
   },
   {
@@ -108,7 +113,9 @@ export const updated_products = [
       "weight": "500g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_6379"]
+    "images": ["IMG_6379"],
+    "description": 'Limited Edition Kurti crafted in Cotton Silk. A premium quality product. Exclusive design for unique style. Handpicked with special care.'
+
 
   },
 
@@ -138,7 +145,9 @@ export const updated_products = [
       "weight": "300g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7652"]
+    "images": ["IMG_7652"],
+    "description": 'Casual Cotton Top crafted in Cotton. Best selling product for everyday comfort.'
+
 
   },
   {
@@ -166,7 +175,9 @@ export const updated_products = [
       "weight": "400g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7641"]
+    "images": ["IMG_7641"],
+    "description": 'Summer Palazzo Set crafted in Cotton Blend. New arrival for stylish and comfortable wear.'
+
 
   },
   {
@@ -194,7 +205,9 @@ export const updated_products = [
       "weight": "350g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7649"]
+    "images": ["IMG_7649"],
+    "description": 'Printed Kurta Combo crafted in Cotton. Handpicked and best seller item with vibrant colors.'
+
 
   },
   {
@@ -222,7 +235,9 @@ export const updated_products = [
       "weight": "200g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7647"]
+    "images": ["IMG_7647"],
+    "description": 'Everyday Leggings Pack crafted in Lyrca Cotton. Best selling comfort wear.'
+
 
   },
 
@@ -252,7 +267,9 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_7545"]
+    "images": ["IMG_7545"],
+    "description": 'Handpicked Cotton Salwar Set crafted in Cotton Silk. Unique design with soft colors. New arrival in collection.'
+
 
   },
   {
@@ -280,7 +297,9 @@ export const updated_products = [
       "weight": "500g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_7546"]
+    "images": ["IMG_7546"],
+    "description": 'Handpicked Ikat Print Suit crafted in Cotton. Handpicked for ethnic elegance.'
+
 
   },
   {
@@ -308,7 +327,9 @@ export const updated_products = [
       "weight": "700g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_7548"]
+    "images": ["IMG_7548"],
+    "description": 'Handpicked Chanderi Material crafted in Chanderi Silk. Unique and premium fabric. New arrival.'
+
 
   },
   {
@@ -336,7 +357,9 @@ export const updated_products = [
       "weight": "550g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_7547"]
+    "images": ["IMG_7547"],
+    "description": 'Handpicked Floral Designer crafted in Cotton Silk. Unique soft floral design.'
+
 
   },
   {
@@ -364,7 +387,9 @@ export const updated_products = [
       "weight": "750g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_7541"]
+    "images": ["IMG_7541"],
+    "description": 'Exclusive Handpicked Fabric crafted in Silk. Premium and exclusive fabric. New arrival.'
+
 
   },
   {
@@ -392,7 +417,9 @@ export const updated_products = [
       "weight": "500g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_7543"]
+    "images": ["IMG_7543"],
+    "description": 'Handpicked Pastel Suit Piece crafted in Cotton. Soft pastel color collection.'
+
 
   },
 
@@ -422,7 +449,9 @@ export const updated_products = [
       "weight": "800g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6818"]
+    "images": ["IMG_6818"],
+    "description": 'Premium Exclusive Kanchipuram Material crafted in Pure Silk. Premium quality and exclusive design. New arrival.'
+
 
   },
   {
@@ -450,7 +479,9 @@ export const updated_products = [
       "weight": "750g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6824"]
+    "images": ["IMG_6824"],
+    "description": 'Premium Patola Silk crafted in Silk. Exceptional traditional weave with premium quality.'
+
   },
   {
     "id": "salwar_009",
@@ -477,7 +508,9 @@ export const updated_products = [
       "weight": "650g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6836"]
+    "images": ["IMG_6836"],
+    "description": 'Exclusive Premium Modal Cotton crafted in Modal Cotton. Comfortable premium fabric for daily wear.'
+
 
   },
   {
@@ -505,7 +538,9 @@ export const updated_products = [
       "weight": "900g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6822"]
+    "images": ["IMG_6822"],
+    "description": 'Premium Banarasi Brocade crafted in Brocade Silk. Exclusive rich fabric with traditional elegance. New arrival.'
+
 
   },
   {
@@ -533,7 +568,9 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "5-7 business days"
     },
-    "images":["IMG_6854"]
+    "images": ["IMG_6854"],
+    "description": 'Premium Exclusive Organza Set crafted in Organza. Elegant and exclusive fabric.'
+
 
   },
 
@@ -563,7 +600,9 @@ export const updated_products = [
       "weight": "550g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6623"]
+    "images": ["IMG_6623"],
+    "description": 'Best Seller Ajrakh Printed Set crafted in Cotton. Popular ethnic print fabric.'
+
 
   },
   {
@@ -591,7 +630,9 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6624"]
+    "images": ["IMG_6624"],
+    "description": 'Best Seller Block Print Suit crafted in Cotton. Handpicked for ethnic beauty. New arrival.'
+
 
   },
   {
@@ -619,7 +660,9 @@ export const updated_products = [
       "weight": "550g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_6625"]
+    "images": ["IMG_6625"],
+    "description": 'Best Seller Cotton Material crafted in Cotton. Popular daily wear fabric.'
+
 
   },
   {
@@ -647,7 +690,9 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6627"]
+    "images": ["IMG_6627"],
+    "description": 'Top Selling Linen Salwar crafted in Linen. Comfortable and popular fabric. New arrival.'
+
 
   },
   {
@@ -675,7 +720,9 @@ export const updated_products = [
       "weight": "540g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6626"]
+    "images": ["IMG_6626"],
+    "description": 'Best Seller Soft Cotton Set crafted in Cotton. Soft and widely favored fabric.'
+
 
   },
   {
@@ -703,7 +750,9 @@ export const updated_products = [
       "weight": "600g",
       "deliveryTime": "4-6 business days"
     },
-    "images":["IMG_6775"]
+    "images": ["IMG_6775"],
+    "description": 'Block Print Best Seller crafted in Cotton. Unique ethnic print. New arrival.'
+
 
   },
 
@@ -733,7 +782,9 @@ export const updated_products = [
       "weight": "450g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7440"]
+    "images": ["IMG_7440"],
+    "description": 'Budget Chikankari Set crafted in Cotton. Affordable traditional embroidery.'
+
 
   },
   {
@@ -761,7 +812,9 @@ export const updated_products = [
       "weight": "400g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7443"]
+    "images": ["IMG_7443"],
+    "description": 'Basic Printed Suit Material crafted in Cotton. Simple and budget-friendly design.'
+
 
   },
   {
@@ -789,7 +842,9 @@ export const updated_products = [
       "weight": "500g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7439"]
+    "images": ["IMG_7439"],
+    "description": 'Cotton Blend Budget Material crafted in Cotton Blend. New arrival with comfort in mind.'
+
 
   },
   {
@@ -817,7 +872,9 @@ export const updated_products = [
       "weight": "480g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7437"]
+    "images": ["IMG_7437"],
+    "description": 'Affordable Style Material crafted in Cotton. Budget-friendly with style.'
+
 
   },
   {
@@ -845,7 +902,9 @@ export const updated_products = [
       "weight": "420g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7465"]
+    "images": ["IMG_7465"],
+    "description": 'Budget Pastel Suit crafted in Cotton. Soft pastel colors for budget-conscious buyers. New arrival.'
+
 
   },
   {
@@ -873,7 +932,9 @@ export const updated_products = [
       "weight": "400g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7467"]
+    "images": ["IMG_7467"],
+    "description": 'Everyday Use Budget Fabric crafted in Cotton. Durable and affordable for daily use.'
+
 
   },
   {
@@ -901,7 +962,9 @@ export const updated_products = [
       "weight": "430g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7464"]
+    "images": ["IMG_7464"],
+    "description": 'Budget Casual Salwar Set crafted in Cotton. Comfortable casual wear fabric.'
+
 
   },
   {
@@ -929,7 +992,9 @@ export const updated_products = [
       "weight": "420g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7463"]
+    "images": ["IMG_7463"],
+    "description": 'Daily Wear Budget Material crafted in Cotton. New arrival budget-friendly fabric.'
+
 
   },
   {
@@ -957,7 +1022,9 @@ export const updated_products = [
       "weight": "400g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7466"]
+    "images": ["IMG_7466"],
+    "description": 'Regular Budget Suit crafted in Cotton. Affordable traditional fabric.'
+
 
   },
   {
@@ -985,7 +1052,9 @@ export const updated_products = [
       "weight": "450g",
       "deliveryTime": "3-5 business days"
     },
-    "images":["IMG_7468"]
+    "images": ["IMG_7468"],
+    "description": 'Value Pack Salwar Material crafted in Cotton. Budget-friendly and popular ethnic fabric. New arrival.'
+
 
   }
 ]

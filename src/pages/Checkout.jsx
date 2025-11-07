@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import './Checkout.css'
+import { useImages } from '../hooks/useImages';
+import boutiqueLogo from '../data/images/logo.png';
+
 
 function Checkout({ cart, user }) {
+   const imagesKey = useImages();
+
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstName: user?.name || '',
@@ -38,7 +43,7 @@ function Checkout({ cart, user }) {
   // Redirect if cart is empty
   useEffect(() => {
     if (!cart || cart.length === 0) {
-      navigate('/shop')
+      navigate('/products')
     }
   }, [cart, navigate])
 
@@ -83,9 +88,9 @@ function Checkout({ cart, user }) {
         key: 'rzp_test_miAIXVeH46aVmS', // Replace with your Razorpay Key ID
         amount: totalInINR, // Amount in paise
         currency: 'INR',
-        name: 'FLONE Fashion',
-        description: 'Purchase from FLONE',
-        image: '/logo.png', // Your logo URL
+        name: 'THARAGAI BOUTIQUE',
+        description: 'Purchase from THARAGAI BOUTIQUE',
+        image: boutiqueLogo, // Your logo URL
         order_id: '', // Generate from backend in production
         handler: function (response) {
           // Payment successful
@@ -298,9 +303,9 @@ function Checkout({ cart, user }) {
           <div className="checkout-items">
             {cart.map(item => (
               <div key={item.id} className="checkout-item">
-                <img src={item.image} alt={item.name} />
+                <img  src={imagesKey[`${item.images[0]}.jpg`]}  alt={item.title} />
                 <div className="checkout-item-info">
-                  <div className="checkout-item-name">{item.name}</div>
+                  <div className="checkout-item-name">{item.title}</div>
                   <div className="checkout-item-qty">Qty: {item.quantity}</div>
                 </div>
                 <div className="checkout-item-price">
@@ -323,10 +328,7 @@ function Checkout({ cart, user }) {
               <span>Tax (10%):</span>
               <span>${tax.toFixed(2)}</span>
             </div>
-            <div className="summary-row total">
-              <span>Total (USD):</span>
-              <span>${total.toFixed(2)}</span>
-            </div>
+            
             <div className="summary-row total">
               <span>Total (INR):</span>
               <span>₹{(totalInINR / 100).toFixed(2)}</span>

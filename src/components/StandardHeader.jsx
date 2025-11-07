@@ -5,8 +5,15 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter'
 
-function StandardHeader({ cartCount = 1 }) {
+function StandardHeader({ cart }) {
+    const navigate = useNavigate()
     const applyFilter = useApplyHomeFilter()
+    const navigateToHome = () => {
+        navigate('/')
+    }
+    const navigateToCart = () => {
+        navigate('/cart')
+    }
 
 
     return (
@@ -31,8 +38,9 @@ function StandardHeader({ cartCount = 1 }) {
                     </a>
                 </div>
                 <div className="header-center-logo">
-                    <img src={boutiqueLogo} height="50" />
-                    {/* <a href="/">THARAGAI BOUTIQUE<sup>®</sup></a> */}
+
+                    <img src={boutiqueLogo} height="50" onClick={navigateToHome} />
+
                 </div>
                 <div className="header-actions-row">
                     <button className="header-icon" aria-label="Search">
@@ -44,9 +52,9 @@ function StandardHeader({ cartCount = 1 }) {
                     <button className="header-icon" aria-label="Wishlist">
                         <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M17.991 4.611a4.307 4.307 0 0 1 3.167 7.097c-2.82 3.533-7.152 7.086-7.152 7.086s-4.352-3.573-7.18-7.106a4.307 4.307 0 0 1 3.174-7.077c1.284-.147 2.53.323 3.341 1.213.81-.89 2.057-1.36 3.35-1.213Z" stroke="#444" strokeWidth="2" fill="none" /></svg>
                     </button>
-                    <button className="header-icon" aria-label="Cart" style={{ position: "relative" }}>
+                    <button className="header-icon" aria-label="Cart" style={{ position: "relative" }} onClick={navigateToCart} >
                         <svg width="23" height="23" fill="none" viewBox="0 0 23 23"><circle cx="11.5" cy="11.5" r="10.5" stroke="#444" strokeWidth="2" /><path d="M7 7l9 0.01-1 7.992H8L7 7Z" stroke="#444" strokeWidth="2" /></svg>
-                        {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                        {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
                     </button>
                 </div>
             </div>

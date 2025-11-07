@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./MobileHeader.css";
 import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter'
+import boutiqueLogo from '../data/images/logo.png';
+import { useNavigate } from "react-router-dom";
+
 
 // You can pass these from props if desired for navigation
 const menuLinks = [
@@ -15,9 +18,10 @@ const tabBarLinks = [
   { label: "READY TO WEAR", icon: "🥻", type: "readyToWear" },
 ];
 
-function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
+function MobileHeader({ cart = [], wishlistCount = [] }) {
   const applyFilter = useApplyHomeFilter()
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   // Trap focus in sidebar when open for accessibility
   React.useEffect(() => {
@@ -38,6 +42,13 @@ function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [menuOpen]);
 
+  const navigateToHome = () => {
+    navigate('/')
+  }
+   const navigateToCart = () => {
+        navigate('/cart')
+    }
+
   return (
     <>
       <div className="mobile-header-bar">
@@ -55,14 +66,19 @@ function MobileHeader({ cartCount = 1, wishlistCount = 0 }) {
         <button className="header-icon" aria-label="Search">
           <span role="img" aria-label="Search">🔍</span>
         </button>
-        <div className="mobile-logo">THARAGAI<sup>®</sup></div>
+        <div className="mobile-logo">
+
+          <img src={boutiqueLogo} height="50" onClick={navigateToHome} />
+
+
+        </div>
         <button className="header-icon" aria-label="Wishlist">
           <span role="img" aria-label="Wishlist">♡</span>
           {wishlistCount > 0 && <span className="cart-badge">{wishlistCount}</span>}
         </button>
-        <button className="header-icon" aria-label="Cart">
+        <button className="header-icon" aria-label="Cart" onClick={navigateToCart}>
           <span role="img" aria-label="Cart">👜</span>
-          {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+          {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
         </button>
       </div>
 

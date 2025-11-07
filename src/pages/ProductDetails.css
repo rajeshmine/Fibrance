@@ -186,7 +186,9 @@
   .product-details-image {
     max-height: 300px;
   }
-
+.product-details {
+  margin: 0 var(--space-16) var(--space-32) var(--space-16);
+}
   .product-details-name {
     font-size: var(--font-size-lg);
   }

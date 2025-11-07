@@ -15,6 +15,8 @@ import Notification from './components/Notification'
 import { productsData } from './data/products'
 import OrderSuccess from './pages/OrderSuccess'
 import AppHeader from './components/AppHeader'
+import { useSelector } from 'react-redux'
+import { selectFilteredProducts } from './redux/selectors/selectFilteredProducts'
 
 // Protected Route Component
 function ProtectedRoute({ children, isAuthenticated }) {
@@ -32,10 +34,12 @@ function App() {
   const [wishlist, setWishlist] = useState([])
   const [user, setUser] = useState(null)
   const [notification, setNotification] = useState({ show: false, message: '' })
+  const filteredProducts = useSelector(selectFilteredProducts)
 
   const isAuthenticated = !!user
 
   const showNotification = (message) => {
+    console.log(message)
     setNotification({ show: true, message })
     setTimeout(() => {
       setNotification({ show: false, message: '' })
@@ -58,36 +62,38 @@ function App() {
     setWishlist([])
     showNotification('Logged out successfully')
   }
-const addToCart = (productId) => {
-  const product = productsData.find(p => p.productId === productId);
-  const existingItem = cart.find(item => item.productId === productId);
+const addToCart = (id) => {
+  
+  const product = filteredProducts.find(p => p.id === id);
+  
+  const existingItem = cart.find(item => item.id === id);
 
   if (existingItem) {
     setCart(cart.map(item =>
-      item.productId === productId
+      item.id === id
         ? { ...item, quantity: item.quantity + 1 }
         : item
     ));
   } else {
     setCart([...cart, { ...product, quantity: 1 }]);
   }
-  showNotification(`${product.name} added to cart!`);
+  showNotification(`${product.title} added to cart!`);
 }
 
-const removeFromCart = (productId) => {
-  setCart(cart.filter(item => item.productId !== productId));
+const removeFromCart = (id) => {
+  setCart(cart.filter(item => item.id !== id));
   showNotification('Item removed from cart');
 }
 
-const updateQuantity = (productId, change) => {
-  const item = cart.find(item => item.productId === productId);
+const updateQuantity = (id, change) => {
+  const item = cart.find(item => item.id === id);
   if (item) {
     const newQuantity = item.quantity + change;
     if (newQuantity <= 0) {
-      removeFromCart(productId);
+      removeFromCart(id);
     } else {
       setCart(cart.map(item =>
-        item.productId === productId
+        item.id === id
           ? { ...item, quantity: newQuantity }
           : item
       ));
@@ -102,12 +108,12 @@ const clearCart = () => {
   }
 }
 
-const toggleWishlist = (productId) => {
-  const product = productsData.find(p => p.productId === productId);
-  const index = wishlist.findIndex(item => item.productId === productId);
+const toggleWishlist = (id) => {
+  const product = filteredProducts.find(p => p.id === id);
+  const index = wishlist.findIndex(item => item.id === id);
 
   if (index > -1) {
-    setWishlist(wishlist.filter(item => item.productId !== productId));
+    setWishlist(wishlist.filter(item => item.id !== id));
     showNotification(`${product.name} removed from wishlist`);
   } else {
     setWishlist([...wishlist, product]);
@@ -115,21 +121,15 @@ const toggleWishlist = (productId) => {
   }
 }
 
-const isInWishlist = (productId) => {
-  return wishlist.some(item => item.productId === productId);
+const isInWishlist = (id) => {
+  return wishlist.some(item => item.id === id);
 }
 
 
   return (
     <>
       <ScrollToTop />
-      <AppHeader />
-      {/* <Header 
-        cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)}
-        wishlistCount={wishlist.length}
-        user={user}
-        onLogout={handleLogout}
-      /> */}
+      <AppHeader cart ={cart} />   
       
       <Routes>
         <Route path="/" element={<Home />} />

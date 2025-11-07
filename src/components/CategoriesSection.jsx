@@ -2,40 +2,51 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCategory } from '../redux/slices/categorySlice';
- const categories = [
-    {
-      name: 'New Arrival',
-      image: 'https://neidhal.com/cdn/shop/files/Newarrival.webp?v=1761239004&width=200',
-      link: '/shop?category=New%20Arrival'
-    },
-    {
-      name: 'Salwar Materials',
-      image: 'https://neidhal.com/cdn/shop/files/Salwarmaterial.webp?v=1761239010&width=200',
-      link: '/shop?category=Salwar%20Materials'
-    },
-    {
-      name: 'Rare and Unique',
-      image: 'https://neidhal.com/cdn/shop/files/Rarenunique.webp?v=1755163538&width=200',
-      link: '/shop?category=Rare%20and%20Unique'
-    },
-    {
-      name: 'Bestseller',
-      image: 'https://neidhal.com/cdn/shop/files/Bestseller.webp?v=1754368325&width=200',
-      link: '/shop?category=Bestseller'
-    },
-   {
-      name: 'Ready to wear',
-      image: 'https://neidhal.com/cdn/shop/files/Bestseller.webp?v=1754368325&width=200',
-      link: '/shop?category=Bestseller'
-    },
-  ]
+import IMG_6393 from '../data/images/IMG_6393.jpg'
+import IMG_7545 from '../data/images/IMG_7545.jpg'
+import IMG_6824 from '../data/images/IMG_6824.jpg'
+import IMG_7439 from '../data/images/IMG_7439.jpg'
+import IMG_6626 from '../data/images/IMG_6626.jpg'
+import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter';
+const categories = [
+  {
+    name: 'New Arrival',
+    image: IMG_7545,
+    link: '/shop?category=New%20Arrival',
+    type: 'newArrival'
+  },
+  {
+    name: 'Salwar Materials',
+    image: IMG_6824,
+    link: '/shop?category=Salwar%20Materials',
+    type: 'salwarMaterial'
+  },
+  {
+    name: 'Rare and Unique',
+    image: IMG_7439,
+    link: '/shop?category=Rare%20and%20Unique',
+    type: 'unique'
+  },
+  {
+    name: 'Bestseller',
+    image: IMG_6626,
+    link: '/shop?category=Bestseller',
+    type: 'bestSeller'
+  },
+  {
+    name: 'Ready to wear',
+    image: IMG_6393,
+    link: '/shop?category=Bestseller',
+    type: 'readyToWear'
+  },
+]
 const CategoriesSection = () => {
+  const applyFilter = useApplyHomeFilter()
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleCategoryClick = (cat) => {
-    dispatch(setCategory(cat));
-    navigate('/shop');
+  const handleCategoryClick = (type) => {
+    applyFilter(type)
   };
 
   return (
@@ -47,7 +58,7 @@ const CategoriesSection = () => {
               key={cat.name}
               className="category-circle-card"
               aria-label={cat.name}
-              onClick={() => handleCategoryClick(cat)}
+              onClick={() => handleCategoryClick(cat.type)}
               type="button"
             >
               <img src={cat.image} alt={cat.name} loading="lazy" />

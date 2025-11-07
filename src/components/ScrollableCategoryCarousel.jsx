@@ -3,16 +3,24 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/slices/cartSlice';
 import './ScrollableCategoryCarousel.css';
 import { useImages } from '../hooks/useImages';
+import { useApplyHomeFilter } from '../hooks/useApplyHomeFilter';
+import { useNavigate } from 'react-router-dom';
 
-const ScrollableCategoryCarousel = ({ header, images }) => {
+const ScrollableCategoryCarousel = ({ header, images, type }) => {
   const imagesKey = useImages();
- 
+  const applyFilter = useApplyHomeFilter()
+
   const dispatch = useDispatch();
 
   const handleAddToCart = (productId) => {
     dispatch(addToCart({ productId, quantity: 1 }));
   };
-  console.log(images)
+
+  const navigate = useNavigate()
+
+  const navigateToProductDetails = (id) => {
+    navigate(`/product/${id}`)
+  }
 
   return (
     <div className="carousel-container">
@@ -23,8 +31,7 @@ const ScrollableCategoryCarousel = ({ header, images }) => {
           className="carousel-view-all"
           onClick={(e) => {
             e.preventDefault();
-            // Add your "view all" navigation logic here
-            console.log('View All clicked for', header);
+            applyFilter(type)
           }}
         >
           View All
@@ -32,10 +39,10 @@ const ScrollableCategoryCarousel = ({ header, images }) => {
       </div>
       <div className="carousel-scroll">
         {images.map(({ id, images, title, price }) => (
-          
+
           <div key={id} className="carousel-item">
-            
-            <img src={imagesKey[`${images}.jpg`]} alt={title} className="carousel-image" />
+
+            <img src={imagesKey[`${images}.jpg`]} alt={title} className="carousel-image" onClick={() => navigateToProductDetails(id)} />
             <h3 className="carousel-title" title={title}>{title}</h3>
             <div className="price-addcart-container">
               <p className="carousel-price">₹{price.toFixed(2)}</p>

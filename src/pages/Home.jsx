@@ -13,7 +13,7 @@ import BoutiqueCard from '../components/BoutiqueCard'
 
 
 function Home() {
-  
+
 
   const newArrivalsImags = useSelector(selectProductsByCategory('newArrival'));
   const bestSellerImages = useSelector(selectProductsByCategory('bestSeller'));
@@ -35,7 +35,7 @@ function Home() {
 
   ]
 
-   
+
 
   return (
     <>
@@ -51,6 +51,7 @@ function Home() {
           header="New Arrivals"
           images={newArrivalsImags}
           headerStyle={{ color: '#333' }}
+          type="newArrival"
         />
       </section>
       <section className="">
@@ -62,6 +63,7 @@ function Home() {
           header="Bestseller"
           images={bestSellerImages}
           headerStyle={{ color: '#333' }}
+          type="bestSeller"
         />
       </section>
       <section className="responsive-image-section">
@@ -75,6 +77,7 @@ function Home() {
           header="Rare & Unique"
           images={uniqueImages}
           headerStyle={{ color: '#333' }}
+          type="unique"
         />
       </section>
 
