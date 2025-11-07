@@ -31,7 +31,7 @@
   --color-primary-active: #E70089;
   --color-btn-primary-text: #fff;
   --color-focus-ring: rgba(162, 29, 203, 0.18);
-  
+
   /* RGB versions for opacity control */
   --color-brown-600-rgb: 94, 82, 64;
   --color-teal-500-rgb: 33, 128, 141;
@@ -47,7 +47,7 @@
   --color-surface: var(--color-cream-100);
   --color-text: var(--color-slate-900);
   --color-text-secondary: var(--color-slate-500);
-  
+
   --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
   --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
   --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
@@ -158,14 +158,20 @@ body {
   line-height: var(--line-height-normal);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
-   font-family: 'Poppins', 'Arial', sans-serif;
+  font-family: 'Poppins', 'Arial', sans-serif;
   font-weight: 400;
   color: #222;
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
 }
-strong, b {
+
+strong,
+b {
   font-weight: 700;
 }
 

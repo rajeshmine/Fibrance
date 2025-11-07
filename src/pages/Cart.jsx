@@ -79,8 +79,8 @@ console.log(cart)
           ))}
           
           <div className="cart-actions">
-            <Link to="/products" className="btn btn-secondary">Continue Shopping</Link>
-            <button className="btn btn-secondary" onClick={onClearCart}>Clear Cart</button>
+            <Link to="/products" className="btn continue-shopping-btn">Continue Shopping  → </Link>
+            <button className="btn clear-cart-btn" onClick={onClearCart}>Clear Cart</button>
           </div>
         </div>
         

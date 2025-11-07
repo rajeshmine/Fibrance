@@ -52,15 +52,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  min-width: 128px;
-  width: 128px;
+  width: 150px;
   transition: transform 0.21s;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-8);
 }
 
 .category-circle-card img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -148,8 +147,8 @@
     width: 95px;
   }
   .category-circle-card img {
-    width: 50px;
-    height: 50px;
+    width: 95px;
+    height: 95px;
   }
   .category-circle-label {
     font-size: 10px;

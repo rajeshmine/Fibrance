@@ -108,19 +108,45 @@
 
 @media (max-width: 480px) {
     .carousel-header {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .carousel-title {
+        text-align: center;
+
+        padding: 0 4px;
+        font-size: 12px;
     }
 
     .carousel-item {
-        width: 250px;
+        width: 200px;
+    }
+
+    .carousel-price {
+        font-size: 14px;
+
+    }
+
+    .carousel-add-to-cart-btn {
+        font-size: 12px;
+    }
+
+    .carousel-view-all {
+        font-size: 12px;
     }
 
     .carousel-image {
-        height: 250px;
+        height: 178px;
 
     }
 
     .carousel-container {
         margin: 10px 4px;
+    }
+
+    .price-addcart-container {
+        padding: 0 4px 14px 4px;
+        flex-direction: column;
+        
     }
 }

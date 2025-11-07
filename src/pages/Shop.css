@@ -47,16 +47,16 @@
 .filter-count {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space-24);
+  /* margin-bottom: var(--space-24); */
   padding-bottom: var(--space-16);
   border-bottom: 1px solid var(--color-border);
 }
 
 /* Filter Section */
 .filter-section {
-  margin-bottom: var(--space-20);
+  margin-bottom: var(--space-10);
   border-bottom: 1px solid var(--color-border);
-  padding-bottom: var(--space-16);
+  padding-bottom: var(--space-10);
 }
 
 .filter-section:last-of-type {
@@ -156,7 +156,7 @@
 }
 
 .shop-controls {
-  margin-bottom: var(--space-24);
+  /* margin-bottom: var(--space-24); */
 }
 
 .mobile-filter-btn {
@@ -166,7 +166,7 @@
   align-items: center;
   gap: var(--space-8);
   padding: var(--space-12);
-  margin-bottom: var(--space-16);
+  /* margin-bottom: var(--space-16); */
 }
 
 .shop-header-desktop {
@@ -174,11 +174,12 @@
   gap: var(--space-16);
   align-items: center;
   flex-wrap: wrap;
+  justify-content: end;
 }
 
 .search-input {
-  flex: 1;
-  min-width: 200px;
+  /* flex: 1; */
+  width: 400px;
   padding: var(--space-10) var(--space-12);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-base);
@@ -265,7 +266,7 @@
   }
 
   .mobile-filter-btn {
-    display: flex;
+    display: block;
   }
 
   .shop-header-desktop {
@@ -320,4 +321,69 @@
 
 .filter-section-header .arrow {
   display: none;
+}
+
+.shop-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  font-size: 1.12rem;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 14px 0 14px 6px;
+  margin-bottom: 18px;
+}
+
+.shop-bar-filter {
+  background: none;
+  border: none;
+  color: #7e8487;
+  display: flex;
+  align-items: center;
+  font-size: 1.09rem;
+  font-weight: 400;
+  cursor: pointer;
+  column-gap: 7px;
+  letter-spacing: 0.014em;
+  transition: color 0.17s;
+  padding: 0px 2px;
+}
+
+.shop-bar-filter:hover,
+.shop-bar-filter:focus {
+  color: #E70089;
+}
+
+.shop-bar-icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.shop-bar-label {
+  font-family: inherit;
+  font-size: 1.06rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  margin-top: 1.5px;
+}
+
+.shop-bar-count {
+  color: #888;
+  font-size: 1.06rem;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  font-weight: 390;
+}
+
+@media (max-width: 600px) {
+  .shop-bar {
+    font-size: 1rem;
+    padding: 11px 4px 11px 2px;
+    margin-bottom: 3px;
+  }
+  .shop-bar-label,
+  .shop-bar-count {
+    font-size: 0.97rem;
+  }
 }

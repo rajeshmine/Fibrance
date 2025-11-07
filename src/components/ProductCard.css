@@ -41,6 +41,7 @@
     gap: var(--space-12);
     margin: 0 4px;
   }
+
 }
 
 .product-card {
@@ -79,9 +80,9 @@
   left: 9px;
   background: #E70089;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 5px 17px;
+  padding: 2px 9px;
   border-radius: 0 8px 8px 0;
   letter-spacing: 0.06em;
 }
@@ -195,7 +196,7 @@
     min-width: 98px;
     max-width: 92vw;
     padding: 0px 0px 2px 0px;
-    
+
   }
 
   .product-meta-row {
@@ -228,5 +229,15 @@
     font-size: 17px;
     top: 5px;
     right: 5px;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .product-name {
+    font-size: 0.8rem;
+    margin: 2px 0 0 0;
+    padding: 0 6px;
   }
 }

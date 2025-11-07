@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--space-32);
+  margin: 0 10px;
 }
 
 .cart-items-section {
@@ -120,6 +121,16 @@
   background: var(--color-secondary);
   border-radius: var(--radius-sm);
 }
+.continue-shopping-btn{
+  text-align: center;
+color: #e70089;
+}
+.clear-cart-btn{
+  text-align: center;
+background: #ffdaf0;
+  color: #e70089;
+  font-size: 13px;
+}
 
 /* Tablet Responsive - 768px to 1024px */
 @media (max-width: 1024px) {
@@ -207,6 +218,9 @@
 
 /* Small Mobile - below 480px */
 @media (max-width: 480px) {
+  .cart-page {
+    
+  }
   .cart-item-row {
     padding: var(--space-12) var(--space-8);
   }

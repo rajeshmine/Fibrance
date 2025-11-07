@@ -24,7 +24,7 @@ function StandardHeader({ cart }) {
                         {/* Facebook SVG */}
                         <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path fill="#444" d="M12.6 21.365V11.235h3.369l.505-3.3h-3.874V6.083c0-.955.265-1.605 1.636-1.605H16.6V1.454c-.286-.038-1.27-.124-2.416-.124-2.391 0-4.029 1.455-4.029 4.128v2.47H6v3.3h4.155v10.137h2.445Z" /></svg>
                     </a>
-                    <a href="https://instagram.com" aria-label="Instagram" className="icon-social">
+                    <a href="https://www.instagram.com/tharagaithedressshop/" aria-label="Instagram" className="icon-social">
                         {/* Instagram SVG */}
                         <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="5" stroke="#444" strokeWidth="2" /><circle cx="11" cy="11" r="4" stroke="#444" strokeWidth="2" /><circle cx="16.5" cy="5.5" r="1" fill="#444" /></svg>
                     </a>

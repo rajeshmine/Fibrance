@@ -10,10 +10,13 @@ import CategoriesSection from '../components/CategoriesSection';
 import banner1 from '../data/images/banner1.png';
 import banner2 from '../data/images/banner2.png';
 import BoutiqueCard from '../components/BoutiqueCard'
+import HeroCard from '../components/HeroCard'
+import PriceFilterSection from '../components/PriceFilterSection'
 
 
 function Home() {
 
+  const [selectedPriceRange, setSelectedPriceRange] = React.useState();
 
   const newArrivalsImags = useSelector(selectProductsByCategory('newArrival'));
   const bestSellerImages = useSelector(selectProductsByCategory('bestSeller'));
@@ -36,6 +39,22 @@ function Home() {
   ]
 
 
+  const filterOptions = {
+    priceRanges: [
+      { value: "below-1000", from: 0, to: 999 },
+      { value: "1000-2000", from: 1000, to: 2000 },
+      { value: "above-2000", from: 2001, to: null }
+    ]
+  };
+
+  const handlePriceRangeChange = (value) => {
+    let selectedRange = filterOptions.priceRanges.find(range => range.value === value);
+    if (selectedRange) {
+      dispatch(setPriceRange({ from: selectedRange.from, to: selectedRange.to }));
+      setSelectedPriceRange(value);
+    }
+  };
+
 
   return (
     <>
@@ -46,6 +65,10 @@ function Home() {
       <section className="carousel-section">
         <Carousel images={carouselImages} autoPlay={true} interval={4000} />
       </section>
+      {/* <section className="">
+        <BoutiqueCard />
+      </section> */}
+
       <section>
         <ScrollableCategoryCarousel
           header="New Arrivals"
@@ -54,9 +77,7 @@ function Home() {
           type="newArrival"
         />
       </section>
-      <section className="">
-        <BoutiqueCard />
-      </section>
+
 
       <section>
         <ScrollableCategoryCarousel
@@ -66,12 +87,7 @@ function Home() {
           type="bestSeller"
         />
       </section>
-      <section className="responsive-image-section">
-        <img
-          src="https://neidhal.com/cdn/shop/files/New_Arrivals_DK.webp?v=1761239088&width=2000"
-          alt="New Arrivals"
-        />
-      </section>
+
       <section>
         <ScrollableCategoryCarousel
           header="Rare & Unique"
@@ -82,6 +98,13 @@ function Home() {
       </section>
 
 
+      <section>
+        <PriceFilterSection
+          selected={selectedPriceRange}
+          onChange={handlePriceRangeChange}
+        />
+
+      </section>
 
       <FeaturesSection />
       {/* Features Section */}

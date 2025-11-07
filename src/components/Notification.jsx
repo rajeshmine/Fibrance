@@ -1,4 +1,5 @@
 import React from 'react'
+import './Notification.css'
 
 function Notification({ show, message }) {
   return (
